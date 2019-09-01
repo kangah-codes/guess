@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<form method='post'>
+	<input id="txt" type="text" name="number" placeholder="Enter your GUESS"/><br>
+	<input class="btn btn-lg btn-outline-success" type="submit" value="Submit">
+</form>
+<p>{{ reply }}</p>
+{% if img == 'sad' %}
+	<img width="400px" height="400px" class="img-responsive" src="{{url_for('static', filename='sad.gif')}}" />
+{% elif img == 'win' %}
+	<img width="400px" height="400px" class="img-responsive" src="{{url_for('static', filename='win.gif')}}" />
+{% else %}
+{% endif %}
+<h6>Minimum is 5 and max is 100</h6>
+{% endblock %}
